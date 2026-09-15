@@ -1,0 +1,37 @@
+# Copy to config.yaml and edit. No credentials belong in this file if it is shared.
+
+paths:
+  # PLINK 1 binary panel used as the LD reference (1000G EUR, 503 samples)
+  ld_panel: /path/to/EUR_local/EUR          # .bed/.bim/.fam
+  # GTEx v8 cis-eQTL, bgzip + tabix
+  eqtl:
+    Lung: /path/to/Lung.tsv.gz
+    Prostate: /path/to/Prostate.tsv.gz
+    Stomach: /path/to/Stomach.tsv.gz
+  # munged cancer GWAS in the project's clean format (SNP CHR POS A1 A2 BETA SE P FRQ N)
+  gwas_dir: /path/to/clean
+  # MTAG output (one file per trait)
+  mtag_dir: /path/to/mtag_out
+  out_dir: ./outputs
+
+region_15q25:
+  chrom: "15"
+  start: 78400000        # hg19, matches the LD panel
+  end: 79300000
+
+thresholds:
+  gws_z: 5.451           # |z| for p < 5e-8
+  eqtl_instrument_p: 1.0e-5   # see docs/METHODS_NOTES.md for the justification
+  ld_prune_r2: 0.1
+  maf_min: 0.01
+
+coloc:
+  priors_p12: [1.0e-6, 1.0e-5, 1.0e-4]
+  sd_prior_quant: 0.15   # coloc default for quantitative traits
+  sd_prior_cc: 0.2       # coloc default for case/control traits
+
+mr:
+  cis_instrument: rs7359276
+
+seeds:
+  simulation: 20260914

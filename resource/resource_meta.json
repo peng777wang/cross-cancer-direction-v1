@@ -1,0 +1,18 @@
+{
+  "title": "Cross-cancer direction and MTAG-borrowing explorer",
+  "version": "1.0",
+  "date": "2026-09-14",
+  "definitions": {
+    "DSI": "sign agreement of a locus across the cancers in which it is genome-wide significant; +1 = all pairs concordant, -1 = all pairs antagonistic",
+    "borrowed": "1 - |z_own| / |z_MTAG|; the share of a cancer's MTAG estimate that is not present in that cancer's own GWAS",
+    "own_gwas_supports": "the locus reaches genome-wide significance in at least two of its own, unborrowed GWAS"
+  },
+  "caveats": [
+    "Direction classes are inferred from MTAG. In the reversed class no cancer reaches genome-wide significance in its own GWAS, and the median borrowing is 76-82%. Treat the reversed class as a model prediction, not as established biological antagonism.",
+    "Borrowing is not a defect of MTAG; it is what MTAG is for. It is reported so that a reader can see which estimates are observations and which are predictions.",
+    "A negative borrowed share means that cancer's own GWAS estimate exceeds its MTAG estimate: MTAG shrinks as well as amplifies.",
+    "Loci were selected for cross-cancer pleiotropy, so the excess of aligned loci is an upper bound on concordance, not an unbiased estimate; the reversed class shows no excess over the sign-flip null.",
+    "Effect sizes are on the standardised (z) scale and are not comparable across cancers with different sample sizes."
+  ],
+  "source": "public GWAS summary statistics; see the accompanying manuscript and code release"
+}

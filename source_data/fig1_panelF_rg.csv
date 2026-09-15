@@ -1,0 +1,8 @@
+comparison,rg,se,flag
+PRAD (disc.) × GC (indep.),-0.1013,0.0611,indep
+PRAD (disc.) × SCLC (indep.),-0.1715,0.1587,indep
+PRAD3 (indep.) × GC (indep.),-0.1046,0.0625,indep
+PRAD3 (indep.) × SCLC (indep.),-0.1765,0.165,indep
+Positive control: PRAD3 × PRAD,0.9601,0.1129,ctrl
+PRAD2 × PRAD (control failed),-0.1231,0.1271,bad
+SCLC × PRAD (same-sample),-1.2814,1.7577,bad

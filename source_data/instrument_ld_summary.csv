@@ -1,0 +1,2 @@
+n_instruments,n_pairs,max_abs_r,mean_abs_r,p95_abs_r,n_pairs_r_gt_0.1,n_pairs_r_gt_0.2
+15,210,0.117,0.039,0.089,8,0

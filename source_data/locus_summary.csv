@@ -1,0 +1,274 @@
+snp,chr,pos,gene,k,n_conc,n_ant,dsi_mtag,dsi_raw,cls,cls_raw,median_borrowed_if_antagonistic,own_gwas_supports
+rs17384696,1,51241057,FAF1,2,1,0,1.0,1.0,aligned,safe,,False
+rs78738909,1,51317374,FAF1,2,1,0,1.0,1.0,aligned,safe,,False
+rs2842865,1,156159532,SLC25A44,2,1,0,1.0,1.0,aligned,safe,,False
+rs2540175,1,156184747,PMF1-BGLAP,2,1,0,1.0,1.0,aligned,safe,,False
+rs2758598,1,156194339,PMF1-BGLAP,3,3,0,1.0,1.0,aligned,safe,,False
+rs2984613,1,156197380,PMF1,3,3,0,1.0,1.0,aligned,safe,,False
+rs2736611,1,156205383,PMF1,3,3,0,1.0,1.0,aligned,safe,,False
+rs3072,2,20878406,GDF7,2,1,0,1.0,1.0,aligned,safe,,False
+rs17027650,2,63389998,WDPCP,2,0,1,-1.0,-1.0,reversed (MTAG-inferred),risky,,False
+rs79357683,2,63472102,WDPCP,2,0,1,-1.0,-1.0,reversed (MTAG-inferred),risky,,False
+rs75321049,2,63476126,WDPCP,2,0,1,-1.0,-1.0,reversed (MTAG-inferred),risky,,False
+rs6706673,2,218251702,DIRC3-AS1,2,1,0,1.0,1.0,aligned,safe,,False
+rs4674161,2,218256009,DIRC3-AS1,2,1,0,1.0,1.0,aligned,safe,,False
+rs57004880,2,218272581,DIRC3-AS1,2,1,0,1.0,1.0,aligned,safe,,False
+rs74723351,2,218288217,DIRC3-AS1,2,1,0,1.0,1.0,aligned,safe,,False
+rs6745321,2,218293234,DIRC3-AS1,3,3,0,1.0,1.0,aligned,safe,,False
+rs10181989,2,218294915,DIRC3-AS1,2,1,0,1.0,1.0,aligned,safe,,False
+rs16857609,2,218296508,DIRC3-AS1,3,3,0,1.0,-0.3333,aligned,mixed,0.846,False
+rs12617808,2,218302217,DIRC3-AS1,3,3,0,1.0,1.0,aligned,safe,,False
+rs2045932,2,218307223,DIRC3-AS1,3,3,0,1.0,-0.3333,aligned,mixed,0.878,False
+rs4672832,2,218309228,DIRC3-AS1,3,3,0,1.0,-0.3333,aligned,mixed,0.864,False
+rs1478595,2,218309899,DIRC3-AS1,3,3,0,1.0,-0.3333,aligned,mixed,0.869,False
+rs2568158,2,218334534,DIRC3-AS1,2,1,0,1.0,1.0,aligned,safe,,False
+rs1382438,2,218338829,DIRC3-AS1,2,1,0,1.0,1.0,aligned,safe,,False
+rs35856653,2,218350206,DIRC3-AS1,2,1,0,1.0,1.0,aligned,safe,,False
+rs874839,2,218354087,DIRC3-AS1,2,1,0,1.0,1.0,aligned,safe,,False
+rs61349367,2,218369689,DIRC3-AS1,2,1,0,1.0,1.0,aligned,safe,,False
+rs13097028,3,169464942,TERC,3,3,0,1.0,1.0,aligned,safe,,False
+rs9878797,3,169529958,LRRC34,2,1,0,1.0,1.0,aligned,safe,,False
+rs6793160,3,169535266,LRRIQ4,3,3,0,1.0,1.0,aligned,safe,,False
+rs9882101,3,169548655,LRRIQ4,3,3,0,1.0,1.0,aligned,safe,,False
+rs16854453,3,169559234,LRRC31,3,3,0,1.0,1.0,aligned,safe,,False
+rs10049456,3,169563523,LRRC31,3,3,0,1.0,1.0,aligned,safe,,False
+rs4955678,3,169574912,LRRC31,3,3,0,1.0,1.0,aligned,safe,,False
+rs1920116,3,169579971,LRRC31,3,3,0,1.0,1.0,aligned,safe,,False
+rs71277158,3,169999216,PRKCI,2,0,1,-1.0,1.0,reversed (MTAG-inferred),safe,0.991,False
+rs6533183,4,106133184,TET2-AS1,2,0,1,-1.0,-1.0,reversed (MTAG-inferred),risky,,False
+rs11097882,4,106142960,TET2-AS1,3,1,2,-0.3333,-0.3333,mixed,mixed,,False
+rs2735946,5,1300429,TERT,2,1,0,1.0,1.0,aligned,safe,,True
+rs61574973,5,1309168,MIR4457,2,1,0,1.0,1.0,aligned,safe,,True
+rs28379291,5,1313701,CLPTM1L,2,1,0,1.0,1.0,aligned,safe,,True
+rs13170453,5,1317481,CLPTM1L,3,3,0,1.0,1.0,aligned,safe,,True
+rs421629,5,1320136,CLPTM1L,2,1,0,1.0,1.0,aligned,safe,,True
+rs401681,5,1322087,CLPTM1L,2,1,0,1.0,1.0,aligned,safe,,True
+rs452384,5,1330840,CLPTM1L,2,1,0,1.0,1.0,aligned,safe,,True
+rs455433,5,1336243,CLPTM1L,2,1,0,1.0,1.0,aligned,safe,,True
+rs2233956,6,31081205,C6orf15,2,1,0,1.0,1.0,aligned,safe,,False
+rs3130985,6,31085356,CDSN,2,1,0,1.0,1.0,aligned,safe,,False
+rs3130557,6,31094703,CDSN,2,1,0,1.0,1.0,aligned,safe,,False
+rs3131380,6,31709778,MSH5,2,1,0,1.0,1.0,aligned,safe,,False
+rs3117575,6,31726253,MSH5,2,1,0,1.0,1.0,aligned,safe,,False
+rs3115672,6,31727897,MSH5,2,1,0,1.0,1.0,aligned,safe,,False
+rs9271627,6,32591949,HLA-DQA1,2,1,0,1.0,1.0,aligned,safe,,False
+rs9272462,6,32605620,HLA-DQA1,2,1,0,1.0,1.0,aligned,safe,,False
+rs381194,6,160712194,SLC22A2,2,0,1,-1.0,1.0,reversed (MTAG-inferred),safe,0.713,False
+rs3105751,6,160822675,SLC22A3,2,1,0,1.0,1.0,aligned,safe,,False
+rs12194182,6,160834515,SLC22A3,2,1,0,1.0,1.0,aligned,safe,,False
+rs3918286,6,160868668,SLC22A3,2,1,0,1.0,1.0,aligned,safe,,False
+rs10950407,7,1895666,MIR4655,2,1,0,1.0,1.0,aligned,safe,,False
+rs10269191,7,1915731,MIR4655,2,1,0,1.0,-1.0,aligned,risky,0.983,False
+rs12532128,7,1925454,MIR4655,3,3,0,1.0,1.0,aligned,safe,,False
+rs12667688,7,1931030,MIR4655,3,3,0,1.0,1.0,aligned,safe,,False
+rs34922657,7,1938655,MIR4655,3,3,0,1.0,1.0,aligned,safe,,False
+rs12537914,7,1948359,MIR4655,3,3,0,1.0,1.0,aligned,safe,,False
+rs6950151,7,1953521,MIR4655,2,1,0,1.0,-1.0,aligned,risky,0.999,False
+rs4721190,7,1954732,MIR4655,2,1,0,1.0,-1.0,aligned,risky,0.997,False
+rs12536062,7,1958672,MIR4655,3,3,0,1.0,1.0,aligned,safe,,False
+rs13244345,7,1973004,MIR4655,2,1,0,1.0,-1.0,aligned,risky,0.972,False
+rs11557347,7,1979741,MIR4655,2,1,0,1.0,-1.0,aligned,risky,0.968,False
+rs10950473,7,1999453,MIR4655,3,3,0,1.0,1.0,aligned,safe,,False
+rs4721264,7,2012997,SNORA114,3,3,0,1.0,1.0,aligned,safe,,False
+rs4721282,7,2025040,SNORA114,2,1,0,1.0,1.0,aligned,safe,,False
+rs4721287,7,2028663,SNORA114,2,1,0,1.0,1.0,aligned,safe,,False
+rs847560,7,97687986,LMTK2,2,0,1,-1.0,-1.0,reversed (MTAG-inferred),risky,,False
+rs13240869,7,97694493,LMTK2,2,0,1,-1.0,-1.0,reversed (MTAG-inferred),risky,,False
+rs12670686,7,97708397,LMTK2,2,0,1,-1.0,-1.0,reversed (MTAG-inferred),risky,,False
+rs7808528,7,97721425,LMTK2,2,0,1,-1.0,-1.0,reversed (MTAG-inferred),risky,,False
+rs11768309,7,97773812,LMTK2,2,0,1,-1.0,-1.0,reversed (MTAG-inferred),risky,,False
+rs7804318,7,97796635,LMTK2,2,0,1,-1.0,-1.0,reversed (MTAG-inferred),risky,,False
+rs7791463,7,97819047,LMTK2,2,0,1,-1.0,-1.0,reversed (MTAG-inferred),risky,,False
+rs10271646,7,124549573,POT1-AS1,2,1,0,1.0,1.0,aligned,safe,,False
+rs7835802,8,23495136,NKX3-1,3,1,2,-0.3333,-0.3333,mixed,mixed,,False
+rs7829619,8,23499264,NKX3-1,3,1,2,-0.3333,-0.3333,mixed,mixed,,False
+rs1398240,8,23501606,NKX3-1,3,1,2,-0.3333,-0.3333,mixed,mixed,,False
+rs13256300,8,23502588,NKX3-1,3,1,2,-0.3333,-0.3333,mixed,mixed,,False
+rs4872171,8,23514289,NKX3-1,3,1,2,-0.3333,-0.3333,mixed,mixed,,False
+rs13262683,8,23515679,NKX3-1,3,1,2,-0.3333,-0.3333,mixed,mixed,,False
+rs11782388,8,23525358,NKX3-1,3,1,2,-0.3333,-0.3333,mixed,mixed,,False
+rs4872175,8,23534802,NKX3-1,3,1,2,-0.3333,-0.3333,mixed,mixed,,False
+rs1866343,8,23543583,NKX3-1,3,1,2,-0.3333,-0.3333,mixed,mixed,,False
+rs28615829,8,128018205,PCAT1,2,0,1,-1.0,-1.0,reversed (MTAG-inferred),risky,,False
+rs1487240,8,128021752,PCAT1,2,0,1,-1.0,-1.0,reversed (MTAG-inferred),risky,,False
+rs7823297,8,128025916,PCAT1,2,0,1,-1.0,-1.0,reversed (MTAG-inferred),risky,,False
+rs7823764,8,128026262,PCAT1,2,0,1,-1.0,-1.0,reversed (MTAG-inferred),risky,,False
+rs2124597,8,128028337,PCAT1,2,0,1,-1.0,1.0,reversed (MTAG-inferred),safe,0.902,False
+rs6470494,8,128087904,PCAT2,3,1,2,-0.3333,-0.3333,mixed,mixed,,False
+rs10107982,8,128318755,CASC8,2,0,1,-1.0,1.0,reversed (MTAG-inferred),safe,0.904,False
+rs10505477,8,128407443,CASC21,4,2,4,-0.3333,-0.3333,mixed,mixed,0.896,False
+rs10808556,8,128413147,CCAT2,3,1,2,-0.3333,-0.3333,mixed,mixed,0.777,False
+rs118097379,8,128418882,CCAT2,2,0,1,-1.0,1.0,reversed (MTAG-inferred),safe,0.948,False
+rs7837328,8,128423127,POU5F1B,2,0,1,-1.0,-1.0,reversed (MTAG-inferred),risky,,False
+rs10956367,8,128423544,POU5F1B,3,1,2,-0.3333,-0.3333,mixed,mixed,0.765,False
+rs7018368,8,128424933,POU5F1B,3,1,2,-0.3333,-0.3333,mixed,mixed,0.776,False
+rs4871022,8,128427720,POU5F1B,3,1,2,-0.3333,-0.3333,mixed,mixed,0.781,False
+rs75753382,8,128441548,POU5F1B,2,0,1,-1.0,1.0,reversed (MTAG-inferred),safe,0.917,False
+rs4871803,8,128488382,CASC8,3,1,2,-0.3333,-0.3333,mixed,mixed,,False
+rs4431561,8,128498504,CASC8,4,2,4,-0.3333,0.0,mixed,mixed,0.636,False
+rs4242384,8,128518554,CASC8,4,2,4,-0.3333,0.0,mixed,mixed,0.665,False
+rs35907927,8,128523285,CASC8,2,0,1,-1.0,-1.0,reversed (MTAG-inferred),risky,,False
+rs11992171,8,128529933,CASC8,4,2,4,-0.3333,-0.3333,mixed,mixed,0.938,False
+rs9656816,8,128534654,CASC8,4,2,4,-0.3333,0.0,mixed,mixed,0.783,False
+rs7837688,8,128539360,CASC8,4,2,4,-0.3333,0.0,mixed,mixed,0.655,False
+rs13269511,8,128876943,MIR1204,2,1,0,1.0,1.0,aligned,safe,,False
+rs10956392,8,128881681,MIR1204,2,1,0,1.0,1.0,aligned,safe,,False
+rs4733801,8,128892551,TMEM75,2,1,0,1.0,1.0,aligned,safe,,False
+rs4733579,8,128898169,TMEM75,2,1,0,1.0,1.0,aligned,safe,,False
+rs7856768,9,19056754,HAUS6,2,1,0,1.0,1.0,aligned,safe,,True
+rs6475315,9,19061358,SCARNA8,3,3,0,1.0,1.0,aligned,safe,,True
+rs7467618,9,19065295,SCARNA8,2,1,0,1.0,1.0,aligned,safe,,True
+rs4439216,9,19066115,SCARNA8,2,1,0,1.0,1.0,aligned,safe,,True
+rs7022807,9,19067833,SCARNA8,2,1,0,1.0,1.0,aligned,safe,,True
+rs7030280,9,100535267,PTCSC2,6,15,0,1.0,0.3333,aligned,mixed,0.886,False
+rs2401637,9,100541473,PTCSC2,6,15,0,1.0,0.3333,aligned,mixed,0.89,False
+rs7847449,9,100551908,PTCSC2,2,1,0,1.0,1.0,aligned,safe,,False
+rs1156850,9,100573164,PTCSC2,2,1,0,1.0,1.0,aligned,safe,,False
+rs10739513,9,100592705,PTCSC2,3,3,0,1.0,-0.3333,aligned,mixed,0.857,False
+rs7049054,9,100599969,PTCSC2,3,3,0,1.0,-0.3333,aligned,mixed,0.863,False
+rs7847259,9,100600712,PTCSC2,3,3,0,1.0,-0.3333,aligned,mixed,0.858,False
+rs6478437,9,100607497,PTCSC2,3,3,0,1.0,-0.3333,aligned,mixed,0.863,False
+rs10759960,9,100608745,PTCSC2,3,3,0,1.0,-0.3333,aligned,mixed,0.817,False
+rs894672,9,100612185,PTCSC2,3,3,0,1.0,-0.3333,aligned,mixed,0.858,False
+rs3758249,9,100614140,PTCSC2,3,3,0,1.0,-0.3333,aligned,mixed,0.86,False
+rs1867277,9,100615914,FOXE1,3,3,0,1.0,-0.3333,aligned,mixed,0.861,False
+rs3021526,9,100617021,FOXE1,3,3,0,1.0,-0.3333,aligned,mixed,0.859,False
+rs4460498,9,100620412,FOXE1,3,3,0,1.0,-0.3333,aligned,mixed,0.883,False
+rs2417575,9,100628642,FOXE1,3,3,0,1.0,-0.3333,aligned,mixed,0.935,False
+rs7847010,9,100630439,FOXE1,3,3,0,1.0,-0.3333,aligned,mixed,0.897,False
+rs10115216,9,100657119,TRMO,3,3,0,1.0,-0.3333,aligned,mixed,0.917,False
+rs6478469,9,100658938,TRMO,3,3,0,1.0,-0.3333,aligned,mixed,0.919,False
+rs7022148,9,100660824,TRMO,3,3,0,1.0,-0.3333,aligned,mixed,0.918,False
+rs10818241,9,100661972,TRMO,4,6,0,1.0,0.0,aligned,mixed,0.919,False
+rs10984253,9,100664474,TRMO,4,6,0,1.0,0.0,aligned,mixed,0.918,False
+rs35202847,10,105611147,SH3PXD2A,3,3,0,1.0,1.0,aligned,safe,,False
+rs72853920,11,2206429,MIR4686,2,0,1,-1.0,-1.0,reversed (MTAG-inferred),risky,,False
+rs117520198,11,2212843,MIR4686,2,0,1,-1.0,-1.0,reversed (MTAG-inferred),risky,,False
+rs11564691,11,2214039,MIR4686,2,0,1,-1.0,-1.0,reversed (MTAG-inferred),risky,,False
+rs11043050,11,2215333,MIR4686,2,0,1,-1.0,-1.0,reversed (MTAG-inferred),risky,,False
+rs4075003,11,2220304,MIR4686,2,0,1,-1.0,-1.0,reversed (MTAG-inferred),risky,,False
+rs72853954,11,2221765,MIR4686,2,0,1,-1.0,-1.0,reversed (MTAG-inferred),risky,,False
+rs72853963,11,2224664,MIR4686,3,1,2,-0.3333,-0.3333,mixed,mixed,,False
+rs10840584,11,2228618,MIR4686,3,1,2,-0.3333,-0.3333,mixed,mixed,,False
+rs7126857,11,2229111,MIR4686,3,1,2,-0.3333,-0.3333,mixed,mixed,,False
+rs10743181,11,2229759,MIR4686,2,0,1,-1.0,-1.0,reversed (MTAG-inferred),risky,,False
+rs7395734,11,2231694,MIR4686,3,1,2,-0.3333,-0.3333,mixed,mixed,,False
+rs6579001,11,2232056,MIR4686,3,1,2,-0.3333,-0.3333,mixed,mixed,,False
+rs7109219,11,2233041,MIR4686,3,1,2,-0.3333,-0.3333,mixed,mixed,,False
+rs7127599,11,2233365,MIR4686,3,1,2,-0.3333,-0.3333,mixed,mixed,,False
+rs71455921,11,2233635,MIR4686,3,1,2,-0.3333,-0.3333,mixed,mixed,,False
+rs11043143,11,2234093,MIR4686,3,1,2,-0.3333,-0.3333,mixed,mixed,,False
+rs10896429,11,68876160,TPCN2,2,0,1,-1.0,-1.0,reversed (MTAG-inferred),risky,,False
+rs10896439,11,68915362,LOC338694,2,0,1,-1.0,1.0,reversed (MTAG-inferred),safe,0.951,False
+rs12796066,11,68918556,LOC338694,2,0,1,-1.0,-1.0,reversed (MTAG-inferred),risky,,False
+rs12418451,11,68935419,LOC338694,3,1,2,-0.3333,-0.3333,mixed,mixed,,False
+rs12223972,11,68960391,LOC338694,2,0,1,-1.0,-1.0,reversed (MTAG-inferred),risky,,False
+rs12418968,11,68977135,LOC338694,3,1,2,-0.3333,-0.3333,mixed,mixed,0.941,False
+rs79485992,11,68980770,LOC338694,2,0,1,-1.0,1.0,reversed (MTAG-inferred),safe,0.971,False
+rs6606667,11,69209622,LOC102724265,2,1,0,1.0,1.0,aligned,safe,,False
+rs78416151,11,69249998,LOC102724265,4,6,0,1.0,1.0,aligned,safe,,False
+rs77247065,11,69251982,LOC102724265,4,6,0,1.0,1.0,aligned,safe,,False
+rs10743579,12,26461145,ITPR2,3,3,0,1.0,1.0,aligned,safe,,False
+rs10842704,12,26462982,ITPR2,3,3,0,1.0,1.0,aligned,safe,,False
+rs139653137,12,53260717,KRT78,2,0,1,-1.0,1.0,reversed (MTAG-inferred),safe,0.791,False
+rs55914512,12,53282274,KRT8,2,0,1,-1.0,1.0,reversed (MTAG-inferred),safe,0.951,False
+rs113094235,12,53323144,KRT18,2,0,1,-1.0,-1.0,reversed (MTAG-inferred),risky,,False
+rs113466970,14,73249404,DPF3,2,1,0,1.0,1.0,aligned,safe,,False
+rs12435078,14,73249806,DPF3,2,1,0,1.0,1.0,aligned,safe,,False
+rs12435321,14,73267602,DPF3,2,1,0,1.0,1.0,aligned,safe,,False
+rs11627524,14,73268465,DPF3,3,3,0,1.0,1.0,aligned,safe,,False
+rs72730359,14,73271798,DPF3,2,1,0,1.0,1.0,aligned,safe,,False
+rs12889140,14,73310496,DPF3,3,3,0,1.0,1.0,aligned,safe,,False
+rs34433136,14,73399418,DCAF4,2,1,0,1.0,1.0,aligned,safe,,False
+rs17122577,14,73402827,DCAF4,2,1,0,1.0,1.0,aligned,safe,,False
+rs4903078,14,73404438,DCAF4,2,1,0,1.0,1.0,aligned,safe,,False
+rs11621489,14,73407856,DCAF4,2,1,0,1.0,1.0,aligned,safe,,False
+rs11158998,14,73417744,DCAF4,2,1,0,1.0,1.0,aligned,safe,,False
+rs11158999,14,73423827,DCAF4,2,1,0,1.0,1.0,aligned,safe,,False
+rs1007934,14,73463479,ZFYVE1,2,1,0,1.0,1.0,aligned,safe,,False
+rs10400825,15,40881116,KNL1,2,1,0,1.0,1.0,aligned,safe,,False
+rs7167768,15,40906197,KNL1,2,1,0,1.0,1.0,aligned,safe,,False
+rs2412541,15,40913840,KNL1,2,1,0,1.0,1.0,aligned,safe,,False
+rs8035775,15,40922403,KNL1,2,1,0,1.0,1.0,aligned,safe,,False
+rs12906095,15,40964393,KNL1,2,1,0,1.0,1.0,aligned,safe,,False
+rs17851970,15,66612965,DIS3L,2,1,0,1.0,1.0,aligned,safe,,True
+rs113513894,15,66689302,MAP2K1,3,3,0,1.0,1.0,aligned,safe,,True
+rs77515996,15,66708939,MAP2K1,2,1,0,1.0,1.0,aligned,safe,,True
+rs112747606,15,66716106,MAP2K1,2,1,0,1.0,1.0,aligned,safe,,True
+rs11636809,15,66729927,MAP2K1,2,1,0,1.0,1.0,aligned,safe,,True
+rs111572611,15,66755923,SNAPC5,2,1,0,1.0,1.0,aligned,safe,,True
+rs28684409,15,66794706,SNORD18B,2,1,0,1.0,1.0,aligned,safe,,True
+rs79350921,15,66801937,ZWILCH,2,1,0,1.0,1.0,aligned,safe,,True
+rs2869030,15,78711803,IREB2,3,3,0,1.0,1.0,aligned,safe,,True
+rs2938670,15,78740688,IREB2,3,3,0,1.0,1.0,aligned,safe,,True
+rs2938674,15,78757913,IREB2,3,3,0,1.0,1.0,aligned,safe,,True
+rs16969894,15,78776456,IREB2,3,3,0,1.0,1.0,aligned,safe,,True
+rs12101809,15,78779801,IREB2,3,3,0,1.0,1.0,aligned,safe,,True
+rs28511883,15,78783683,IREB2,3,3,0,1.0,1.0,aligned,safe,,True
+rs12441426,15,78812329,HYKK,3,3,0,1.0,1.0,aligned,safe,,True
+rs7181245,15,78814389,HYKK,3,3,0,1.0,1.0,aligned,safe,,True
+rs12439240,15,78829091,HYKK,3,3,0,1.0,1.0,aligned,safe,,True
+rs3813570,15,78832832,PSMA4,3,3,0,1.0,1.0,aligned,safe,,True
+rs1052035,15,78841353,PSMA4,2,1,0,1.0,1.0,aligned,safe,,False
+rs2036527,15,78851615,CHRNA5,3,3,0,1.0,1.0,aligned,safe,,True
+rs17486278,15,78867482,CHRNA5,3,3,0,1.0,1.0,aligned,safe,,True
+rs1700006,15,78875623,CHRNA3,3,3,0,1.0,1.0,aligned,safe,,True
+rs951266,15,78878541,CHRNA3,3,3,0,1.0,1.0,aligned,safe,,True
+rs8192482,15,78886198,CHRNA3,3,3,0,1.0,1.0,aligned,safe,,True
+rs578776,15,78888400,CHRNA5,3,3,0,1.0,1.0,aligned,safe,,True
+rs138544659,15,78900701,CHRNA3,3,3,0,1.0,1.0,aligned,safe,,True
+rs189218934,15,78903987,CHRNA3,3,3,0,1.0,1.0,aligned,safe,,True
+rs8042374,15,78908032,CHRNA3,3,3,0,1.0,1.0,aligned,safe,,True
+rs13329271,15,78914230,CHRNA3,3,3,0,1.0,1.0,aligned,safe,,True
+rs55958997,15,78915872,CHRNB4,3,3,0,1.0,1.0,aligned,safe,,True
+rs17487223,15,78923987,CHRNB4,3,3,0,1.0,1.0,aligned,safe,,True
+rs1316971,15,78930510,CHRNB4,3,3,0,1.0,1.0,aligned,safe,,True
+rs2170311,15,78947611,CHRNB4,3,3,0,1.0,1.0,aligned,safe,,True
+rs7164665,15,78953919,CHRNB4,2,1,0,1.0,1.0,aligned,safe,,True
+rs1996371,15,78956806,CHRNB4,3,3,0,1.0,1.0,aligned,safe,,True
+rs11857532,15,78968268,CHRNB4,3,3,0,1.0,1.0,aligned,safe,,True
+rs8038920,15,78974545,CHRNB4,2,1,0,1.0,1.0,aligned,safe,,False
+rs11638372,15,78983559,CHRNB4,3,3,0,1.0,1.0,aligned,safe,,True
+rs8027972,15,79022615,LOC646938,3,3,0,1.0,1.0,aligned,safe,,True
+rs11639375,15,79024214,LOC646938,3,3,0,1.0,1.0,aligned,safe,,True
+rs4887083,15,79025577,LOC646938,3,3,0,1.0,1.0,aligned,safe,,True
+rs3894347,15,79026001,LOC646938,3,3,0,1.0,1.0,aligned,safe,,True
+rs11072805,15,79078518,ADAMTS7,3,3,0,1.0,1.0,aligned,safe,,True
+rs1994016,15,79080234,ADAMTS7,2,1,0,1.0,1.0,aligned,safe,,True
+rs3890715,15,79107862,ADAMTS7,2,1,0,1.0,1.0,aligned,safe,,False
+rs9920493,15,79113846,ADAMTS7,2,1,0,1.0,1.0,aligned,safe,,False
+rs8041064,15,79115388,ADAMTS7,2,1,0,1.0,1.0,aligned,safe,,False
+rs12442476,15,79117856,ADAMTS7,2,1,0,1.0,1.0,aligned,safe,,False
+rs58021857,15,79119229,ADAMTS7,2,1,0,1.0,1.0,aligned,safe,,False
+rs8035093,15,79120670,ADAMTS7,2,1,0,1.0,1.0,aligned,safe,,False
+rs4389112,15,79122099,ADAMTS7,2,1,0,1.0,1.0,aligned,safe,,False
+rs7182716,15,79123753,ADAMTS7,2,1,0,1.0,1.0,aligned,safe,,False
+rs10083697,15,79124039,ADAMTS7,2,1,0,1.0,1.0,aligned,safe,,False
+rs8024048,15,79127907,ADAMTS7,2,1,0,1.0,1.0,aligned,safe,,False
+rs12903668,15,79129320,ADAMTS7,2,1,0,1.0,1.0,aligned,safe,,False
+rs6495341,15,79133026,ADAMTS7,2,1,0,1.0,1.0,aligned,safe,,False
+rs8028410,15,79134267,ADAMTS7,2,1,0,1.0,1.0,aligned,safe,,False
+rs11637783,15,79139000,MORF4L1,2,1,0,1.0,1.0,aligned,safe,,False
+rs8041818,15,79139831,MORF4L1,2,1,0,1.0,1.0,aligned,safe,,False
+rs16950982,16,79702371,MAFTRR,2,1,0,1.0,1.0,aligned,safe,,False
+rs11150188,16,79707298,MAFTRR,2,1,0,1.0,1.0,aligned,safe,,False
+rs7202240,16,79745896,MAFTRR,2,1,0,1.0,1.0,aligned,safe,,False
+rs3813582,16,79749353,MAFTRR,2,1,0,1.0,1.0,aligned,safe,,False
+rs7223387,17,36082473,HNF1B,2,0,1,-1.0,-1.0,reversed (MTAG-inferred),risky,,False
+rs77050488,17,36107869,HNF1B,2,0,1,-1.0,-1.0,reversed (MTAG-inferred),risky,,False
+rs9911515,17,69115358,CASC17,3,1,2,-0.3333,-0.3333,mixed,mixed,,False
+rs8079315,17,69120855,CASC17,2,0,1,-1.0,1.0,reversed (MTAG-inferred),safe,0.983,False
+rs12962403,18,672035,TYMS,2,1,0,1.0,1.0,aligned,safe,,False
+rs1059393,18,672836,TYMS,2,1,0,1.0,1.0,aligned,safe,,False
+rs12967001,18,737535,YES1,2,1,0,1.0,1.0,aligned,safe,,False
+rs62113214,19,51362537,KLK3,3,1,2,-0.3333,-0.3333,mixed,mixed,,False
+rs143190905,20,62291767,RTEL1-TNFRSF6B,3,3,0,1.0,1.0,aligned,safe,,False
+rs16983884,20,62320674,RTEL1,2,1,0,1.0,1.0,aligned,safe,,False
+rs41309931,20,62326579,RTEL1,4,6,0,1.0,1.0,aligned,safe,,True
+rs2872881,20,62342801,ARFRP1,2,1,0,1.0,1.0,aligned,safe,,False
+rs2750483,20,62345470,ARFRP1,2,1,0,1.0,1.0,aligned,safe,,True
+rs1758205,20,62355756,LIME1,2,1,0,1.0,1.0,aligned,safe,,False
+rs6122154,20,62359345,LIME1,2,1,0,1.0,1.0,aligned,safe,,False
+rs1151624,20,62369895,LIME1,2,1,0,1.0,1.0,aligned,safe,,False
+rs1741708,20,62372041,SLC2A4RG,2,1,0,1.0,1.0,aligned,safe,,False
+rs12169371,22,43498412,BIK,2,0,1,-1.0,-1.0,reversed (MTAG-inferred),risky,,False

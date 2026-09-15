@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cross-cancer direction and MTAG-borrowing explorer</title>
+<style>
+  :root{
+    --ink:#1c1c1c; --mute:#5d6672; --line:#e3e7ec; --bg:#ffffff; --panel:#f7f9fb;
+    --green:#1b7837; --red:#c0392b; --grey:#8c8c8c; --blue:#2166ac;
+    --amber-bg:#fff8e6; --amber-line:#e6c34a;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+  .wrap{max-width:1180px;margin:0 auto;padding:26px 22px 60px}
+  h1{font-size:21px;margin:0 0 4px}
+  .sub{color:var(--mute);font-size:13px;margin-bottom:16px}
+  .banner{background:var(--amber-bg);border:1px solid var(--amber-line);border-radius:8px;
+          padding:11px 14px;font-size:12.5px;margin:0 0 16px}
+  .banner b{color:#8a6d00}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+  .chip{background:var(--panel);border:1px solid var(--line);border-radius:999px;
+        padding:4px 11px;font-size:12.5px}
+  .chip b{font-variant-numeric:tabular-nums}
+  .controls{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin-bottom:12px}
+  input[type=text],select{font:inherit;padding:6px 9px;border:1px solid var(--line);
+        border-radius:6px;background:#fff;color:var(--ink)}
+  input[type=text]{min-width:290px}
+  button{font:inherit;padding:6px 12px;border:1px solid var(--line);border-radius:6px;
+         background:#fff;cursor:pointer}
+  button:hover{background:var(--panel)}
+  .hint{color:var(--mute);font-size:12px;margin-left:2px}
+  table{border-collapse:collapse;width:100%;font-size:13px}
+  th,td{border-bottom:1px solid var(--line);padding:6px 8px;text-align:left;
+        white-space:nowrap}
+  th{background:var(--panel);cursor:pointer;user-select:none;font-weight:600;
+     position:sticky;top:0;z-index:2}
+  th .arw{color:var(--mute);font-size:11px}
+  tbody tr{cursor:pointer}
+  tbody tr:hover{background:#f2f7fb}
+  tbody tr.sel{background:#e8f1f9}
+  .num{text-align:right;font-variant-numeric:tabular-nums}
+  .pill{display:inline-block;padding:1px 7px;border-radius:999px;font-size:11.5px;
+        border:1px solid transparent}
+  .p-aligned{background:#e7f3ec;color:var(--green);border-color:#cfe7d9}
+  .p-reversed{background:#fdecea;color:var(--red);border-color:#f6d5d1}
+  .p-mixed{background:#f0f1f3;color:var(--mute);border-color:#e2e4e8}
+  .tbl-wrap{max-height:56vh;overflow:auto;border:1px solid var(--line);border-radius:8px}
+  .detail{margin-top:20px;border:1px solid var(--line);border-radius:8px;padding:16px 18px;
+          background:var(--panel)}
+  .detail h2{margin:0 0 3px;font-size:16px}
+  .detail .meta{color:var(--mute);font-size:12.5px;margin-bottom:12px}
+  .grid{display:grid;grid-template-columns:96px 1fr 52px;gap:5px 12px;align-items:center;
+        font-size:12.5px}
+  .gl{font-weight:600;color:var(--ink)}
+  .bar{position:relative;height:11px;background:#e9edf1;border-radius:3px;overflow:hidden}
+  .bar i{position:absolute;top:0;bottom:0;display:block}
+  .bar .m{background:#2c7fb8}
+  .bar .r{background:#f0a04b}
+  .bar .mid{position:absolute;left:50%;top:-2px;bottom:-2px;width:1px;background:#c4ccd4}
+  .gv{font-size:11.5px;color:var(--mute);font-variant-numeric:tabular-nums}
+  .note{font-size:12.5px;color:var(--mute);margin-top:12px}
+  .defs{margin-top:26px;border-top:1px solid var(--line);padding-top:14px;font-size:12.5px;
+        color:var(--mute)}
+  .defs h3{font-size:13px;color:var(--ink);margin:14px 0 6px}
+  .defs ul{margin:6px 0 0 18px;padding:0}
+  .defs li{margin-bottom:5px}
+  code{background:#eef1f5;padding:1px 5px;border-radius:4px;font-size:12px}
+  .legend{display:flex;gap:16px;font-size:12px;color:var(--mute);margin:8px 0 0}
+  .sw{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;
+      vertical-align:-1px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1 id="title"></h1>
+  <div class="sub" id="subtitle"></div>
+
+  <div class="banner">
+    <b>How to read this.</b> Direction classes are inferred from MTAG. In the
+    <b>reversed</b> class no cancer reaches genome-wide significance in its own GWAS and the
+    median borrowing is 76-82%, so the reversal is a model prediction rather than established
+    biological antagonism. The <b>borrowed</b> column is the share of a cancer's MTAG estimate
+    that is not present in that cancer's own GWAS; it is shown so a reader can see which
+    numbers are observations and which are predictions.
+  </div>
+
+  <div class="chips" id="chips"></div>
+
+  <div class="controls">
+    <input type="text" id="q" placeholder="rsID, gene, or region e.g. 8q24 / 15:78000000-79500000">
+    <select id="cls">
+      <option value="">all classes</option>
+      <option value="aligned">aligned (DSI = +1)</option>
+      <option value="mixed">mixed</option>
+      <option value="reversed">reversed (MTAG-inferred)</option>
+    </select>
+    <select id="mink">
+      <option value="2">k &ge; 2 (all)</option>
+      <option value="3">k &ge; 3</option>
+      <option value="4">k &ge; 4</option>
+      <option value="5">k &ge; 5</option>
+      <option value="6">k &ge; 6</option>
+    </select>
+    <select id="chr"><option value="">all chromosomes</option></select>
+    <button id="reset">Reset</button>
+    <button id="dl">Download CSV</button>
+    <span class="hint" id="count"></span>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr id="head"></tr></thead>
+      <tbody id="body"></tbody>
+    </table>
+  </div>
+
+  <div class="detail" id="detail"></div>
+
+  <div class="defs">
+    <h3>Definitions</h3>
+    <ul id="defs"></ul>
+    <h3>Caveats</h3>
+    <ul id="caveats"></ul>
+    <h3>Legend</h3>
+    <div class="legend">
+      <span><span class="sw" style="background:#2c7fb8"></span>MTAG z</span>
+      <span><span class="sw" style="background:#f0a04b"></span>own-GWAS z</span>
+      <span>bars are drawn from the centre; length is proportional to |z| (capped at 12)</span>
+    </div>
+  </div>
+</div>
+
+<script id="payload" type="application/json">/*__DATA__*/</script>
+<script>
+(function () {
+  var DATA = JSON.parse(document.getElementById('payload').textContent);
+  var M = DATA.meta, LOCI = DATA.loci, T = M.traits, CAP = 12;
+
+  document.getElementById('title').textContent = M.title;
+  document.getElementById('subtitle').textContent =
+    M.n_loci + ' loci reaching genome-wide significance (|z| > ' + M.gws_z +
+    ') in at least two of ' + T.length + ' carcinoma GWAS; version ' + M.version +
+    ' (' + M.date + ')';
+
+  var nA = LOCI.filter(function (l) { return l.cls === 'aligned'; }).length;
+  var nR = LOCI.filter(function (l) { return l.cls.indexOf('reversed') === 0; }).length;
+  var nM = LOCI.length - nA - nR;
+  var nOwn = LOCI.filter(function (l) { return l.own_gwas_supports; }).length;
+  document.getElementById('chips').innerHTML = [
+    ['loci', M.n_loci], ['aligned', nA], ['reversed (MTAG-inferred)', nR],
+    ['mixed', nM], ['with own-GWAS support (&ge;2 cancers)', nOwn]
+  ].map(function (c) {
+    return '<span class="chip">' + c[0] + ' <b>' + c[1] + '</b></span>';
+  }).join('');
+
+  document.getElementById('defs').innerHTML = Object.keys(M.definitions).map(function (k) {
+    return '<li><code>' + k + '</code> &mdash; ' + M.definitions[k] + '</li>';
+  }).join('');
+  document.getElementById('caveats').innerHTML =
+    M.caveats.map(function (c) { return '<li>' + c + '</li>'; }).join('');
+
+  var chrs = {};
+  LOCI.forEach(function (l) { if (l.chr) { chrs[l.chr] = 1; } });
+  Object.keys(chrs).map(Number).sort(function (a, b) { return a - b; })
+    .forEach(function (c) {
+      var o = document.createElement('option');
+      o.value = c; o.textContent = 'chr' + c;
+      document.getElementById('chr').appendChild(o);
+    });
+
+  var COLS = [
+    {k: 'snp', t: 'rsID'}, {k: 'gene', t: 'nearest gene'},
+    {k: '__pos', t: 'position'}, {k: 'k', t: 'cancers', n: 1},
+    {k: 'dsi_mtag', t: 'DSI (MTAG)', n: 1}, {k: 'dsi_raw', t: 'DSI (own GWAS)', n: 1},
+    {k: 'cls', t: 'class'}, {k: '__bor', t: 'median borrowed (antagonistic)', n: 1},
+    {k: '__own', t: 'own-GWAS support', n: 1}
+  ];
+  var sortKey = 'k', sortDir = -1;      // most pleiotropic loci first
+  document.getElementById('head').innerHTML = COLS.map(function (c) {
+    return '<th data-k="' + c.k + '">' + c.t + ' <span class="arw"></span></th>';
+  }).join('');
+
+  function val(l, k) {
+    if (k === '__pos') { return l.pos || 0; }
+    if (k === '__bor') { return l.median_borrowed_if_antagonistic === null
+      ? -9 : l.median_borrowed_if_antagonistic; }
+    if (k === '__own') { return (l.k ? Object.keys(l.trait).filter(function (t) {
+      return l.trait[t].own_sig; }).length : 0); }
+    return l[k];
+  }
+
+  function parseQ(s) {
+    s = (s || '').trim().toLowerCase();
+    if (!s) { return null; }
+    var m = s.match(/^(?:chr)?(\d{1,2})\s*:\s*([\d,]+)\s*-\s*([\d,]+)$/);
+    if (m) {
+      return {chr: +m[1], lo: +m[2].replace(/,/g, ''), hi: +m[3].replace(/,/g, '')};
+    }
+    // cytogenetic band: 8q24, 8q24.21, 15q25.1, 8q (arm only).
+    // Bands are NOT megabases: 8q24 spans 117.7-146.4 Mb in GRCh37, so the
+    // range is resolved from the bundled UCSC hg19 cytoBand table.
+    var b = s.match(/^(?:chr)?(\d{1,2})([pq])(\d+(?:\.\d+)?)?$/);
+    if (b) {
+      return {chr: +b[1], arm: b[2], band: b[3] || null};
+    }
+    return s;
+  }
+
+  function bandRange(chr, arm, band) {
+    var table = (M.cytobands || {})[String(chr)] || [];
+    var target = arm + (band || '');
+    var hit = table.filter(function (x) {
+      var nm = x[2];
+      if (nm.charAt(0) !== arm) { return false; }
+      if (!band) { return true; }
+      return nm === target || nm.indexOf(target + '.') === 0;
+    });
+    if (!hit.length) { return null; }
+    return {lo: Math.min.apply(null, hit.map(function (x) { return x[0]; })),
+            hi: Math.max.apply(null, hit.map(function (x) { return x[1]; }))};
+  }
+
+  function matches(l, q) {
+    if (!q) { return true; }
+    if (typeof q === 'string') {
+      return (l.snp + ' ' + l.gene).toLowerCase().indexOf(q) >= 0;
+    }
+    if (l.chr !== q.chr) { return false; }
+    if (q.arm) {
+      var r = bandRange(q.chr, q.arm, q.band);
+      if (!r) { return false; }
+      return l.pos >= r.lo && l.pos <= r.hi;
+    }
+    return l.pos >= q.lo && l.pos <= q.hi;
+  }
+
+  function current() {
+    var q = parseQ(document.getElementById('q').value);
+    var cls = document.getElementById('cls').value;
+    var mk = +document.getElementById('mink').value;
+    var chr = document.getElementById('chr').value;
+    return LOCI.filter(function (l) {
+      if (cls && (cls === 'reversed' ? l.cls.indexOf('reversed') !== 0 : l.cls !== cls)) {
+        return false;
+      }
+      if (l.k < mk) { return false; }
+      if (chr && String(l.chr) !== chr) { return false; }
+      return matches(l, q);
+    });
+  }
+
+  function draw() {
+    var rows = current();
+    rows.sort(function (a, b) {
+      var x = val(a, sortKey), y = val(b, sortKey);
+      if (typeof x === 'string' || typeof y === 'string') {
+        return String(x) < String(y) ? -sortDir : (String(x) > String(y) ? sortDir : 0);
+      }
+      return (x < y ? -1 : (x > y ? 1 : 0)) * sortDir;
+    });
+    document.getElementById('count').textContent = rows.length + ' of ' + LOCI.length +
+      ' loci shown';
+    document.getElementById('body').innerHTML = rows.map(function (l, i) {
+      var cl = l.cls.indexOf('reversed') === 0 ? 'p-reversed'
+        : (l.cls === 'aligned' ? 'p-aligned' : 'p-mixed');
+      var bor = l.median_borrowed_if_antagonistic;
+      var nOwn = Object.keys(l.trait).filter(function (t) { return l.trait[t].own_sig; }).length;
+      return '<tr data-i="' + LOCI.indexOf(l) + '">' +
+        '<td>' + l.snp + '</td>' +
+        '<td>' + (l.gene || '') + '</td>' +
+        '<td>' + (l.chr ? l.chr + ':' + l.pos.toLocaleString() : '') + '</td>' +
+        '<td class="num">' + l.k + '</td>' +
+        '<td class="num">' + l.dsi_mtag.toFixed(2) + '</td>' +
+        '<td class="num">' + (l.dsi_raw === null ? '' : l.dsi_raw.toFixed(2)) + '</td>' +
+        '<td><span class="pill ' + cl + '">' + l.cls + '</span></td>' +
+        '<td class="num">' + (bor === null ? '&ndash;' : (100 * bor).toFixed(0) + '%') + '</td>' +
+        '<td class="num">' + nOwn + ' / ' + l.k + '</td></tr>';
+    }).join('');
+    Array.prototype.forEach.call(document.querySelectorAll('#head th'), function (th) {
+      var a = th.querySelector('.arw');
+      a.textContent = th.dataset.k === sortKey ? (sortDir > 0 ? '\u25b2' : '\u25bc') : '';
+    });
+  }
+
+  function bar(z, klass) {
+    var w = Math.min(Math.abs(z), CAP) / CAP * 50;
+    var left = z >= 0 ? 50 : 50 - w;
+    return '<div class="bar"><span class="mid"></span><i class="' + klass +
+      '" style="left:' + left + '%;width:' + w + '%"></i></div>';
+  }
+
+  function detail(l) {
+    var rows = T.map(function (t) {
+      var v = l.trait[t];
+      if (!v) {
+        return '<div class="gl">' + t + '</div><div class="gv">not significant in MTAG</div>' +
+               '<div class="gv"></div>';
+      }
+      var b = (v.borrowed === null) ? '' : (100 * v.borrowed).toFixed(0) + '%';
+      return '<div class="gl">' + t + (v.own_sig ? ' &bull;' : '') + '</div>' +
+        '<div>' + bar(v.z_mtag, 'm') + bar(v.z_raw || 0, 'r') + '</div>' +
+        '<div class="gv">' + b + '</div>';
+    }).join('');
+    var nOwn = Object.keys(l.trait).filter(function (t) { return l.trait[t].own_sig; }).length;
+    document.getElementById('detail').innerHTML =
+      '<h2>' + l.snp + (l.gene ? ' &middot; ' + l.gene : '') + '</h2>' +
+      '<div class="meta">' +
+        (l.chr ? (l.chr + ':' + l.pos.toLocaleString() + ' (GRCh37)') + ' &middot; ' : '') +
+        'significant in ' + l.k + ' cancers &middot; DSI ' + l.dsi_mtag.toFixed(3) +
+        ' (MTAG) / ' + (l.dsi_raw === null ? 'n/a' : l.dsi_raw.toFixed(3)) + ' (own GWAS)' +
+        ' &middot; ' + l.n_conc + ' concordant vs ' + l.n_ant + ' antagonistic pairs' +
+        ' &middot; own-GWAS support: ' + nOwn + ' of ' + l.k + ' cancers' +
+      '</div>' +
+      '<div class="grid">' + rows + '</div>' +
+      '<div class="note">' +
+        (nOwn >= 2
+          ? 'This locus is supported by its own, unborrowed GWAS in at least two cancers.'
+          : '<b>No cancer reaches genome-wide significance for this locus in its own GWAS.</b> ' +
+            'Its MTAG significance is therefore driven by borrowing from the other cancers.') +
+        ' The percentage on the right of each row is the borrowed share of that cancer\u2019s ' +
+        'MTAG estimate; a dot after the cancer name marks that the cancer\u2019s own GWAS is ' +
+        'genome-wide significant. A <b>negative</b> percentage means that cancer\u2019s own ' +
+        'GWAS estimate is larger than its MTAG estimate \u2014 MTAG shrinks as well as ' +
+        'amplifies, depending on the trait\u2019s information relative to the others.' +
+      '</div>';
+  }
+
+  document.getElementById('body').addEventListener('click', function (e) {
+    var tr = e.target.closest('tr');
+    if (!tr) { return; }
+    Array.prototype.forEach.call(document.querySelectorAll('#body tr'), function (x) {
+      x.classList.remove('sel');
+    });
+    tr.classList.add('sel');
+    detail(LOCI[+tr.dataset.i]);
+    document.getElementById('detail').scrollIntoView({behavior: 'smooth', block: 'nearest'});
+  });
+
+  document.getElementById('head').addEventListener('click', function (e) {
+    var th = e.target.closest('th');
+    if (!th) { return; }
+    if (th.dataset.k === sortKey) { sortDir = -sortDir; } else { sortKey = th.dataset.k; sortDir = 1; }
+    draw();
+  });
+
+  ['q', 'cls', 'mink', 'chr'].forEach(function (id) {
+    document.getElementById(id).addEventListener('input', draw);
+    document.getElementById(id).addEventListener('change', draw);
+  });
+  document.getElementById('reset').addEventListener('click', function () {
+    document.getElementById('q').value = '';
+    document.getElementById('cls').value = '';
+    document.getElementById('mink').value = '2';
+    document.getElementById('chr').value = '';
+    draw();
+  });
+  document.getElementById('dl').addEventListener('click', function () {
+    var rows = current();
+    var head = ['snp', 'gene', 'chr', 'pos', 'class_mtag', 'DSI_mtag', 'DSI_raw', 'k',
+                'n_concordant', 'n_antagonistic', 'own_gwas_support',
+                'median_borrowed_if_antagonistic'];
+    var out = [head.join(',')];
+    rows.forEach(function (l) {
+      var nOwn = Object.keys(l.trait).filter(function (t) { return l.trait[t].own_sig; }).length;
+      out.push([l.snp, l.gene, l.chr, l.pos, '"' + l.cls + '"', l.dsi_mtag, l.dsi_raw, l.k,
+                l.n_conc, l.n_ant, nOwn,
+                l.median_borrowed_if_antagonistic === null ? ''
+                  : l.median_borrowed_if_antagonistic].join(','));
+    });
+    var blob = new Blob([out.join('\n')], {type: 'text/csv'});
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'cross_cancer_direction_loci.csv';
+    a.click();
+  });
+
+  draw();
+
+  document.getElementById('detail').innerHTML =
+    '<div class="note">Click any locus above to see its per-cancer evidence: MTAG z ' +
+    'against that cancer\u2019s own GWAS z, and the borrowed share of the estimate.</div>';
+})();
+</script>
+</body>
+</html>
