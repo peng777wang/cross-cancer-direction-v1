@@ -67,12 +67,15 @@ def main(mtag_dir, out_dir, n_perm=5000, seed=20260913):
     out.to_csv(os.path.join(out_dir, "dsi_loci_rawz.csv"))
 
     k = mtag_t["k"].values
-    p_safe = 2.0 ** (-k)
+    # The probability that the k significant signs agree in either direction is
+    # 2^(1-k); 2^(-k) counts only one of the two directions.
+    p_safe = 2.0 ** (1 - k)
+    p_risky = np.where(k == 2, 0.5, 0.0)
     n_safe = int((mtag_t.DSI == 1).sum())
     n_risky = int((mtag_t.DSI == -1).sum())
     print("loci: %d | safe: %d (expected %.1f under H0, P = %.2e) | risky: %d (expected %.1f)"
           % (len(mtag_t), n_safe, p_safe.sum(), poisson_binomial_tail(p_safe, n_safe),
-             n_risky, p_safe.sum()))
+             n_risky, p_risky.sum()))
     print("raw-z re-computation: value agreement %.1f%% | class agreement %.1f%%"
           % (100 * (out.DSI == out.DSI_mtag).mean(),
              100 * (out.class_raw == out.class_mtag).mean()))
