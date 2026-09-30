@@ -24,7 +24,7 @@ gives the value, the source or justification, and the script that uses it.
 | GTEx v8 lung cis-eQTL | EBI eQTL Catalogue, `Lung.tsv.gz` (n = 515) | exposure instrument, colocalisation |
 | GTEx v8 prostate / stomach | same catalogue | tissue specificity |
 | 1000 Genomes EUR | 503 samples, `EUR.bed/bim/fam` | LD reference (GRCh37) |
-| LUAD / LUSC / SCLC GWAS | the project's munged summaries (see manuscript Table S1) | outcomes |
+| LUAD / LUSC / SCLC GWAS | the project's munged summaries (see Supplementary Table 1 of the manuscript) | outcomes |
 | GSCAN smoking initiation | GWAS Catalog `GCST007474` (up to 1,232,091 EUR) | second exposure (smoking) |
 | FinnGen R11 | `C3_BRONCHUS_LUNG_EXALLC`, `J10_COPD`, `E4_IRON_MET`, `D3_ANAEMIA*` | surrogate outcomes, on-target safety |
 | Open Targets Platform v4 | live API | tractability, known drugs |
