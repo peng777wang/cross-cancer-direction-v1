@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+*.Rhistory
+.Rhistory
+.DS_Store
+Thumbs.db
+*.log
+.ipynb_checkpoints/
