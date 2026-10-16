@@ -1,0 +1,4 @@
+class,n,median_abs_stouffer,frac_stouffer_p5e8,median_Q,frac_Q_p05,median_minP,median_n_sig
+aligned,196,6.1,0.607,102.8,1,6.77e-19,1
+reversed,42,7.77,0.857,326.2,1,2.64e-40,1
+mixed,35,8.61,1,535.3,1,1.55e-67,1

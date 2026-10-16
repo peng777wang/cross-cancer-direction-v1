@@ -1,0 +1,4 @@
+class,n,median_chi_gls,frac_gls_p5e8,frac_gls_p05,median_Q,median_n_discordant,median_absz_disc,median_absz_conc
+aligned,196,104.2,0.898,1,86.7,3,0.68,1.71
+mixed,35,264.3,1,1,284.7,4,1.12,1.1
+reversed,42,160.2,0.976,1,170.9,4,1.11,0.74
